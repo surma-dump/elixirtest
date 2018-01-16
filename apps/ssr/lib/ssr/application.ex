@@ -8,6 +8,7 @@ defmodule Ssr.Application do
   def start(_type, _args) do
     # List all child processes to be supervised
     children = [
+     {Ssr.Server, [strategy: :one_for_one]}
       # Starts a worker by calling: Ssr.Worker.start_link(arg)
       # {Ssr.Worker, arg},
     ]
